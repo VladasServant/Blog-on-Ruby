@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_10_21_162614) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -50,7 +53,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_21_162614) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "post_id", null: false
+    t.bigint "post_id", null: false
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -59,7 +62,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_21_162614) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.text "context"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
