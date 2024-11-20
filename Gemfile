@@ -1,4 +1,13 @@
-source "https://rubygems.org"
+source "https://rubygems.org"  
+
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
+gem 'sassc'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.1"
@@ -54,4 +63,9 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+end
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
